@@ -1,0 +1,33 @@
+## Flag for godaddy
+Options +MultiViews
+
+RewriteBase /cms/admin/
+
+## Remove extensions
+RewriteEngine On 
+RewriteCond %{REQUEST_FILENAME} !-f 
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
+
+## Redirect from extensions to non extensions
+RewriteCond %{THE_REQUEST} \s/+(.+?)\.php[\s?] [NC]
+RewriteRule ^ /%1 [R=301,NE,L]
+
+## Redirect non-existing pages to index.php
+Options +SymLinksIfOwnerMatch
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /cms/admin/index.php [L]
+
+# # Enable the rewrite engine
+# <IfModule mod_rewrite.c>
+# RewriteEngine On
+
+# # Remove multiple trailing slashes
+# RewriteCond %{REQUEST_URI} (.*)/+
+# RewriteRule . %1 [R=301,L]
+
+# # Redirect to the parent directory if the requested directory does not exist
+# RewriteCond %{REQUEST_FILENAME} !-d
+# RewriteRule ^(.*/)[^/]+/?$ $1 [R=301,L]
+# </IfModule>

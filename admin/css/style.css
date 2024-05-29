@@ -1,0 +1,21 @@
+img{
+  object-fit: cover;
+}
+
+html,
+body {
+  /* background-color: black !important; */
+}
+#accordionSidebar {
+  background-color: #252830;
+}
+
+select,
+input[type="file"] {
+  margin-left: 5px;
+  font-family: inherit;
+  /* border: none; */
+  outline: none;
+  background-color: inherit;
+  /* color: inherit; */
+}

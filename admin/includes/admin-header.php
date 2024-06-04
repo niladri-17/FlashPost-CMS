@@ -15,7 +15,7 @@ if (isset($_SESSION['user-id'])) {
   $user_username = $user['user_username'];
   $user_email = $user['user_email'];
   if ($user['user_image'] === NULL) {
-    $user_image =  "user-profile-image.png";
+    $user_image = "user-profile-image.png";
   } else {
     $user_image = $user['user_image'];
   }
@@ -39,7 +39,9 @@ if (isset($_SESSION['user-id'])) {
   <title>Dashboard</title>
 
   <link rel="stylesheet" href="./vendor/fontawesome-free/css/all.css" />
-  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+    rel="stylesheet" />
   <link href="css/mini.min.css" rel="stylesheet" />
   <link href="css/style.css" rel="stylesheet" />
   <link href="vendor/summernote/summernote-bs4.min.css" rel="stylesheet" />
@@ -56,14 +58,14 @@ if (isset($_SESSION['user-id'])) {
         <div class="sidebar-brand-icon rotate-n-15">
           <i class="fas fa-laugh-wink"></i>
         </div>
-        <div class="sidebar-brand-text mx-3">SB Admin<sup>2</sup></div>
+        <div class="sidebar-brand-text mx-3">FlashPost Admin</div>
       </a>
 
       <!-- Divider -->
       <hr class="sidebar-divider my-0" />
 
       <!-- Nav Item - Dashboard -->
-      <?php if (isset($_SESSION['user-is-admin'])) : ?>
+      <?php if (isset($_SESSION['user-is-admin'])): ?>
         <li class="nav-item active">
           <a class="nav-link" href="<?= ROOT_URL . 'admin/' ?>">
             <i class="fas fa-fw fa-tachometer-alt"></i>
@@ -90,10 +92,11 @@ if (isset($_SESSION['user-id'])) {
           <span>My Posts</span></a>
       </li>
 
-      <?php if (isset($_SESSION['user-is-admin'])) : ?>
+      <?php if (isset($_SESSION['user-is-admin'])): ?>
 
         <li class="nav-item">
-          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true"
+            aria-controls="collapseTwo">
             <i class="fas fa-fw fa-cog"></i>
             <span>All Posts</span>
           </a>
@@ -176,11 +179,11 @@ if (isset($_SESSION['user-id'])) {
           <!-- Topbar Navbar -->
           <ul class="navbar-nav ml-auto">
             <!-- Nav Item - Search Dropdown (Visible Only XS) -->
-            <li class="nav-item dropdown no-arrow">
+            <!-- <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="fas fa-search fa-fw"></i>
               </a>
-              <!-- Dropdown - Messages -->
+              Dropdown - Messages
               <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
                 <form class="form-inline mr-auto w-100 navbar-search">
                   <div class="input-group">
@@ -193,7 +196,7 @@ if (isset($_SESSION['user-id'])) {
                   </div>
                 </form>
               </div>
-            </li>
+            </li> -->
 
             <li class="nav-item no-arrow">
               <a class="nav-link text-primary" href="<?= ROOT_URL ?>">Home Page</a>
@@ -201,13 +204,15 @@ if (isset($_SESSION['user-id'])) {
 
             <!-- Nav Item - Alerts -->
             <li class="nav-item dropdown no-arrow mx-1">
-              <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
                 <i class="fas fa-bell fa-fw"></i>
                 <!-- Counter - Alerts -->
                 <span class="badge badge-danger badge-counter">3+</span>
               </a>
               <!-- Dropdown - Alerts -->
-              <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
+              <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                aria-labelledby="alertsDropdown">
                 <h6 class="dropdown-header">Alerts Center</h6>
                 <a class="dropdown-item d-flex align-items-center" href="#">
                   <div class="mr-3">
@@ -249,13 +254,15 @@ if (isset($_SESSION['user-id'])) {
 
             <!-- Nav Item - Messages -->
             <li class="nav-item dropdown no-arrow mx-1">
-              <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
                 <i class="fas fa-envelope fa-fw"></i>
                 <!-- Counter - Messages -->
                 <span class="badge badge-danger badge-counter">7</span>
               </a>
               <!-- Dropdown - Messages -->
-              <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="messagesDropdown">
+              <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                aria-labelledby="messagesDropdown">
                 <h6 class="dropdown-header">Message Center</h6>
                 <a class="dropdown-item d-flex align-items-center" href="#">
                   <div class="dropdown-list-image mr-3">
@@ -320,9 +327,12 @@ if (isset($_SESSION['user-id'])) {
 
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
-              <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
                 <span class="mr-2 d-none d-lg-inline text-gray-600 "><?= $user_name ?></span>
-                <img class="img-profile rounded-circle" style="height:45px;width:45px;object-fit:cover;border:2px solid grey;" src="<?= ROOT_URL . 'images/' . $user_image ?>" />
+                <img class="img-profile rounded-circle"
+                  style="height:45px;width:45px;object-fit:cover;border:2px solid grey;"
+                  src="<?= ROOT_URL . 'images/' . $user_image ?>" />
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
@@ -346,7 +356,8 @@ if (isset($_SESSION['user-id'])) {
         <!-- End of Topbar -->
 
         <!-- Logout Modal-->
-        <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+          aria-hidden="true">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header">
